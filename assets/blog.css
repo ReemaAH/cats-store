@@ -1,0 +1,34 @@
+body {
+   background-color: #E8E8E8;
+
+}
+
+
+.card-img-top {
+
+    width: 285px;
+    height:190px;
+}
+
+.custom-row{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+h1{
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.custom-ul{
+    list-style: none;
+}
+
+.custom-ul li {
+    margin-top: 20px;
+    display: inline-block;
+ 
+}

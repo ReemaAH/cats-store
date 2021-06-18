@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+
+<head>
+    <!-- Material Design Bootstrap -->
+    <link href="{% static  'bootstrap-4.3.1-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static  'bootstrap-4.3.1-dist/js/bootstrap.min.j' %}"></script>
+
+    <link rel="stylesheet" href="{%  static 'blog.css'  %}">
+</head>
+
+<body>
+    <h1> Cat store</h1>
+    <div class="container">
+        <div class="row custom-row">
+            <ul class="custom-ul">
+            {% for cat in post_list %}
+        <li >
+                <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="media/{{cat.image}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text"> Name: {{cat.name}}</p>
+                            <p class="card-text"> category: {{cat.category}}</p>
+                            <p class="card-text"> Age: {{cat.age}}</p>
+                        </div>
+                    </div>
+                </div>
+        
+
+            {% endfor %}
+        </li>
+        </ul>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
