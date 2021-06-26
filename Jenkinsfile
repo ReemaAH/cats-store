@@ -1,7 +1,7 @@
 
 
 pipeline {
-  
+  agent any 
     stages {
 
 
@@ -24,3 +24,4 @@ stage("install pip dependencies") {
 }
 
     }}
+}
