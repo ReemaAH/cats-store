@@ -1,9 +1,19 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent none
     stages {
-        stage('build') {
+        stage('Build') {
+            agent {
+                docker {
+                    image 'python:3-alpine'
+                }
+            }
             steps {
-                sh 'python --version'
+                withEnv(["HOME=${env.WORKSPACE}"]) {
+                    sh 'pip install --user -r requirements.txt'
+             
+                }
+            }
+          
             }
         }
     }
