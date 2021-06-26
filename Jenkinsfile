@@ -1,20 +1,14 @@
 pipeline {
     agent none
     stages {
-        stage('Build') {
-            agent {
-                docker {
-                    image 'python:3-alpine'
-                }
-            }
-            steps {
+        stage('build') {
+     steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh 'pip install --user -r requirements.txt'
              
                 }
             }
-           
-            
-            }
+                }
+   
         }
     }
