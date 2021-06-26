@@ -17,6 +17,7 @@ ENV ENV=./env
 RUN ./env/bin/pip install -r requirements.txt
 
 RUN ./env/bin/python manage.py collectstatic --noinput
+RUN ls 
 
 
 RUN ["chmod", "+x", "./docker-entrypoint.sh"]
