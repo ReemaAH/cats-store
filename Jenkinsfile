@@ -1,27 +1,10 @@
-
-
 pipeline {
-  agent any 
+    agent { docker { image 'python:3.5.1' } }
     stages {
-
-
-stage("install pip dependencies") {
-  agent { 
-    docker {
-      label "docker && linux" 
-      image "python:3.7"
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
     }
-  }
-  steps {
-    withEnv(["HOME=${env.WORKSPACE}"]) {
-      sh "pip install virtualenv"
-      sh "virtualenv venv"
-      sh "pip install -r requirements.txt "
-
-    }
-  }
-
-}
-
-    }}
 }
