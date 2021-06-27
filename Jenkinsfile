@@ -1,23 +1,13 @@
 pipeline {
-  agent {
-    label 'docker-agent'
-    
-  }
-  
+  agent any
   
   
   
   stages {
-    stage('install pip dependencies') {
+    stage('stage 1') {
       steps {
-        withEnv(["HOME=${env.WORKSPACE}"]) {
-          sh'''
-            pip install virtualenv
-            virtualenv venv
-            pip install -r requirements.txt
-          '''
-        }
-        
+   
+        echo "stage 1"
         
         
       }
